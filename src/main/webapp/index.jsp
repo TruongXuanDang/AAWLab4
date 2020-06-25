@@ -1,17 +1,48 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: truong
-  Date: 6/24/2020
-  Time: 1:36 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <html>
 <head>
-    <title>INDEX</title>
+    <title>Success</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
 </head>
 <body>
-    <h1>INDEX</h1>
+<h1>List Book</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+    </tr>
+
+    <s:iterator value="books">
+        <tr>
+            <td><s:property value="Id" /></td>
+            <td><s:property value="BookName" /></td>
+            <td><s:property value="Summary" /></td>
+            <td><s:property value="AuthorId" /></td>
+
+        </tr>
+    </s:iterator>
+
+</table>
+
 </body>
 </html>
-
